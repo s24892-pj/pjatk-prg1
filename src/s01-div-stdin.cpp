@@ -1,22 +1,27 @@
 #include <iostream>
 #include <string>
-using namespace std;
-int main()
-{
-int a,b;
-int div;
-cout << "Podaj pierwszą liczbe: ";
-cin >> a;
-cout << "Podaj drugą liczbe: ";
-cin >> b;
-if(b==0)
-{
-cout << "Nie można dzielić przez 0";
-}
-else
-{
-div = (a / b);
-cout << "Dzielenie wynosi: " << div << endl; 
-}
-return 0;
-}
+
+auto ask_user_for_integer (std :: string prompt) -> int
+
+ {
+       std :: cout << prompt << "int:";
+       auto n = std :: string {};
+       std :: getline (std :: cin ,n);
+  return std :: stoi (n);
+ }
+
+auto main () -> int
+ {
+       auto const a = ask_user_for_integer ("a = ");
+       auto const b = ask_user_for_integer ("b = ");
+       if(b==0)
+ {
+       std :: cout << "Nie wolno dzielić przez 0" << std :: endl;
+ }
+  else
+ { 
+       std :: cout << (a / b) << "\n";
+ }
+  return 0;
+ }
+
